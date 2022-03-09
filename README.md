@@ -1,2 +1,2 @@
 # ToDoApp
-To do list web app
+To do list web app for the Odin Project
