@@ -6,8 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <script src="main.js" defer></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="top-bar">
+        <h1>To Do...</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="projects">
+            <h2>Projects</h2>
+        </div>
+        <div class="tasks">
+            <h2>Tasks</h2>
+            <div class="new-task-container">
+                <button class="new-task-button">Add Task +</button>
+                <button class="cancel-new-task">&#10006;</button>
+                <form class="new-task-form">
+                    <div class="form-item">
+                        <label for="title" class="form-label">Task Title</label>
+                        <input type="text" name="title" id="title" placeholder="Ex. Clean Room" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="project" class="form-label">Project</label>
+                        <input type="text" name="project" id="project" placeholder="Ex. Personal" required>
+                    </div>
+                    <div class="form-item-dropdowns">
+                        <div class="form-item">
+                            <label for="priority" class="form-label">Priority</label>
+                            <select class="dropdown" name="priority" id="priority">
+                                <option value="low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="importance">Importance</label>
+                            <select class="dropdown" name="importance" id="importance">
+                                <option value="low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="date">Due Date</label>
+                        <input type="date" name="date" id="date" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="description" class="form-label">Description</label>
+                    </div>
+                    <div>
+                        <textarea name="description" id="description" rows="6" cols="50" placeholder="Ex. Vacuum, organize desk, fold clothes" required></textarea>
+                    </div>
+                    <div class="form-item">
+                        <label for="firstAction" class="form-label">First Action</label>
+                    </div>
+                    <div>
+                        <textarea name="firstAction" id="firstAction" rows="4" cols="50" placeholder="Ex. Pick one t-shirt off the ground"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" id="submitBtn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -7,6 +7,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "no-console": "off",
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dislam21/ToDoApp.git"
@@ -20,5 +41,8 @@
   "devDependencies": {
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
   }
 }
