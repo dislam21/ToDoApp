@@ -1,4 +1,5 @@
 import { format }  from "date-fns";
+import { renderProjectSection, resetProjectSection } from "./newProject";
 
 const tasksContainer = document.querySelector(".tasks");
 const newTaskContainer = document.querySelector(".new-task-container");
@@ -32,10 +33,10 @@ const renderTaskSection = (() => {
     }
 })();
 
-const taskList = [
+let taskList = [
     {
         title: "clean room",
-        project: "personal",
+        project: "Personal",
         priority: "low",
         importance: "low",
         date: "2022-12-21",
@@ -46,7 +47,7 @@ const taskList = [
 
     {
         title: "workout",
-        project: "personal",
+        project: "Fitness",
         priority: "low",
         importance: "low",
         date: "2022-08-03",
@@ -61,6 +62,9 @@ console.log(taskList)
 const addTasktoStorage = () => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
 }
+
+const getTasks = JSON.parse(localStorage.getItem("tasks"));
+taskList = getTasks
 
 const renderTasks = (() => {
 
@@ -214,6 +218,8 @@ const taskManager = (() => {
         taskList.splice(i, 1);
         addTasktoStorage();
         renderTasks();
+        resetProjectSection();
+        renderProjectSection();
     }
 
     console.log("task manager is working");
